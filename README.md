@@ -27,3 +27,15 @@
 
 In progress...
 
+## Testing
+
+npm t
+
+## Demo
+
+    git clone https://github.com/evheniy/react-simple-form-builder.git
+    cd react-simple-form-builder
+    npm i
+    npm run server
+    
+Open http://127.0.0.1:3000/
