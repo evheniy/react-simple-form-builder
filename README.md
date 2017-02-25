@@ -32,11 +32,6 @@
     const Label = builder.components.Label;
     
     ReactDOM.render(
-        <Label children={'text'} />,
-        document.getElementById('root')
-    );
-    
-    ReactDOM.render(
         <Label>label</Label>,
         document.getElementById('root')
     );
@@ -47,8 +42,8 @@
     
     eactDOM.render(
         <List items={[
-            <Label children={'text1'} />,
-            <Label children={'text2'} />,
+            <Label id="1">text1</Label>,
+            <Label id="2">text2</Label>,
         ]} />,
         document.getElementById('root')
     );
@@ -89,7 +84,7 @@
     
     ReactDOM.render(
         <Form method="GET" action="/" children={<List items={[
-            <Label children={'label'} id="1" />,
+            <Label id="1">label</Label>,
             <Button value={'button'} id="2" />,
             <Submit value={'submit'} id="3" />,
             <Label children={[
