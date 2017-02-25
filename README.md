@@ -25,11 +25,79 @@
     
 ## How to use
 
-In progress...
+    import builder from 'react-simple-form-builder';
+
+### Label
+
+    const Label = builder.components.Label;
+    
+    ReactDOM.render(
+        <Label children={'text'} />,
+        document.getElementById('root')
+    );
+    
+### Label
+
+    const List = builder.components.List;
+    
+    eactDOM.render(
+        <List items={[
+            <Label children={'text1'} />,
+            <Label children={'text2'} />,
+        ]} />,
+        document.getElementById('root')
+    );
+    
+### Button
+
+    const Button = builder.components.Button;
+    
+    ReactDOM.render(
+        <Button value={'button'} />,
+        document.getElementById('root')
+    );
+    
+### Submit
+
+    const Submit = builder.components.Submit;
+    
+    ReactDOM.render(
+        <Submit value={'submit'} />,
+        document.getElementById('root')
+    );
+    
+### Checkbox
+
+    const Checkbox = builder.components.Checkbox;
+    
+    ReactDOM.render(
+        <Label children={[
+            <Checkbox value={'checkbox'} />,
+            'checkbox',
+        ]} />,
+        document.getElementById('root')
+    );
+    
+### Form
+
+    const Form = builder.components.Form;
+    
+    ReactDOM.render(
+        <Form method="GET" action="/" children={<List items={[
+            <Label children={'label'} id="1" />,
+            <Button value={'button'} id="2" />,
+            <Submit value={'submit'} id="3" />,
+            <Label children={[
+                <Checkbox value={'checkbox'} />,
+                'checkbox'
+            ]} text="test" id="4" />
+        ]} />} />,
+        document.getElementById('root')
+    );
 
 ## Testing
 
-npm t
+    npm t
 
 ## Demo
 
