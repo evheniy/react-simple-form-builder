@@ -10,7 +10,7 @@ const Form = form.components.Form;
 
 ReactDOM.render(
     <Form method="GET" action="/" children={<List items={[
-        <Label children={'label'} id="1" />,
+        <Label id="1">label</Label>,
         <Button value={'button'} id="2" />,
         <Submit value={'submit'} id="3" />,
         <Label children={[

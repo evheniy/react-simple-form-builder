@@ -36,7 +36,12 @@
         document.getElementById('root')
     );
     
-### Label
+    ReactDOM.render(
+        <Label>label</Label>,
+        document.getElementById('root')
+    );
+    
+### List
 
     const List = builder.components.List;
     
