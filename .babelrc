@@ -1,3 +1,7 @@
 {
-  "presets": ["latest", "react"]
+  "presets": ["latest", "react"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "babel-plugin-transform-decorators-legacy"
+  ]
 }

@@ -19,6 +19,15 @@
 [![GitHub issues](https://img.shields.io/github/issues/evheniy/react-simple-form-builder.svg)](https://github.com/evheniy/react-simple-form-builder/issues)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/evheniy/react-simple-form-builder.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
 
+# Demo
+
+    git clone https://github.com/evheniy/react-simple-form-builder.git
+    cd react-simple-form-builder
+    npm i
+    npm run server
+    
+Open http://127.0.0.1:3000/
+
 ## How to install
 
     npm i -S react-simple-form-builder
@@ -57,6 +66,15 @@
         document.getElementById('root')
     );
     
+### Text
+
+    const Text = builder.components.Text;
+    
+    ReactDOM.render(
+        <Text value={'text'} />,
+        document.getElementById('root')
+    );
+    
 ### Submit
 
     const Submit = builder.components.Submit;
@@ -85,12 +103,13 @@
     ReactDOM.render(
         <Form method="GET" action="/" children={<List items={[
             <Label id="1">label</Label>,
-            <Button value={'button'} id="2" />,
-            <Submit value={'submit'} id="3" />,
+            <Text value="5" id="5" />,
             <Label children={[
                 <Checkbox value={'checkbox'} />,
                 'checkbox'
-            ]} text="test" id="4" />
+            ]} text="test" id="4" />,
+            <Button value={'button'} id="2" />,
+            <Submit value={'submit'} id="3" />,
         ]} />} />,
         document.getElementById('root')
     );
@@ -98,12 +117,3 @@
 ## Testing
 
     npm t
-
-## Demo
-
-    git clone https://github.com/evheniy/react-simple-form-builder.git
-    cd react-simple-form-builder
-    npm i
-    npm run server
-    
-Open http://127.0.0.1:3000/

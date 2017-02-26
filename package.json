@@ -1,22 +1,23 @@
 {
   "name": "react-simple-form-builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React simple form builder",
   "main": "index.js",
   "config": {
     "port": 3000
   },
   "scripts": {
-    "lint": "./node_modules/.bin/npm-run-all --parallel lint:**",
-    "lint:js": "./node_modules/.bin/eslint index.js tests",
-    "test": "./node_modules/.bin/npm-run-all --parallel test:**",
-    "test:security": "./node_modules/.bin/nsp check",
-    "test:code": "node --harmony ./node_modules/mocha/bin/_mocha tests --recursive",
-    "test:coverage": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- tests --recursive",
     "server": "./node_modules/.bin/npm-run-all server:*",
     "server:clear": "./node_modules/.bin/rimraf coverage dist/*.js dist/*.html",
     "server:build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --display-error-details",
     "server:run": "http-server dist -p $npm_package_config_port",
+    "lint": "./node_modules/.bin/npm-run-all --parallel lint:**",
+    "lint:js": "./node_modules/.bin/eslint index.js tests",
+    "test": "./node_modules/.bin/npm-run-all --parallel test:**",
+    "test:clear": "npm run server:clear",
+    "test:security": "./node_modules/.bin/nsp check",
+    "test:code": "./node_modules/.bin/babel-node ./node_modules/mocha/bin/_mocha tests/**/*.{js,jsx}",
+    "test:coverage": "./node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover ./node_modules/mocha/bin/_mocha -- tests/**/*.{js,jsx}",
     "report": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "precommit": "npm run lint && npm test",
     "prepush": "npm run lint && npm test"
@@ -45,13 +46,19 @@
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
+    "babel-istanbul": "^0.12.1",
     "babel-loader": "^6.3.2",
+    "babel-plugin-transform-decorators": "^6.22.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
     "coveralls": "^2.11.16",
+    "css-loader": "^0.26.2",
     "debug": "^2.6.1",
+    "enzyme": "^2.7.1",
     "eslint": "^3.16.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
@@ -66,12 +73,17 @@
     "npm-run-all": "^4.0.1",
     "nsp": "^2.6.2",
     "promise-pause-timeout": "0.0.1",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-hot-loader": "^1.3.1",
     "rimraf": "^2.5.4",
+    "style-loader": "^0.13.2",
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "core-decorators": "^0.15.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-highlight": "^0.9.0"
   }
 }
