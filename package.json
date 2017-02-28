@@ -9,7 +9,7 @@
   "scripts": {
     "server": "./node_modules/.bin/npm-run-all server:*",
     "server:clear": "./node_modules/.bin/rimraf coverage dist/*.js dist/*.html",
-    "server:build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --display-error-details",
+    "server:build": "./node_modules/.bin/webpack --progress --display-error-details",
     "server:run": "http-server dist -p $npm_package_config_port",
     "lint": "./node_modules/.bin/npm-run-all --parallel lint:**",
     "lint:js": "./node_modules/.bin/eslint index.js tests",
